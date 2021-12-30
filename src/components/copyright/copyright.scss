@@ -1,0 +1,11 @@
+$copyright-padding: 0.5rem;
+$copyright-font-size: 14px;
+
+.copyright {
+  padding: $copyright-padding;
+  text-align: center;
+}
+
+.copyright__text {
+  font-size: $copyright-font-size;
+}

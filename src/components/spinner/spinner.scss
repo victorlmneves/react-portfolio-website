@@ -1,0 +1,92 @@
+@import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
+
+$progress-bar-height: 4px;
+$spinner-left-position: 50%;
+$spinner-icon-size: 50px;
+
+/* Make clicks pass-through */
+#nprogress {
+  max-height: 100vh;
+  max-width: 100vh;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  background: $brand-black;
+  height: $progress-bar-height;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1031;
+}
+
+/* Fancy blur effect */
+#nprogress .peg {
+  display: block;
+  position: absolute;
+  right: 0px;
+  width: 100px;
+  height: 100%;
+  box-shadow: 0 0 10px #29d, 0 0 5px #29d;
+  opacity: 1;
+
+  -webkit-transform: rotate(3deg) translate(0px, -4px);
+  -ms-transform: rotate(3deg) translate(0px, -4px);
+  transform: rotate(3deg) translate(0px, -4px);
+}
+
+/* Remove these to get rid of the spinner */
+#nprogress .spinner {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  position: absolute;
+  left: $spinner-left-position;
+  right: 15px;
+  top: 15px;
+  z-index: 1031;
+}
+
+#nprogress .spinner-icon {
+  border: solid 2px transparent;
+  border-left-color: $brand-black;
+  border-top-color: $brand-black;
+  border-radius: 50%;
+  box-sizing: border-box;
+  height: $spinner-icon-size;
+  width: $spinner-icon-size;
+
+  -webkit-animation: nprogress-spinner 400ms linear infinite;
+  animation: nprogress-spinner 400ms linear infinite;
+}
+
+.nprogress-custom-parent {
+  overflow: hidden;
+  position: relative;
+}
+
+.nprogress-custom-parent #nprogress .spinner,
+.nprogress-custom-parent #nprogress .bar {
+  position: absolute;
+}
+
+@-webkit-keyframes nprogress-spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes nprogress-spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

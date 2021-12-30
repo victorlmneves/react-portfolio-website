@@ -1,0 +1,132 @@
+$body-margin: 0;
+$menu-open-overflow: hidden;
+$menu-open-display: flex;
+$menu-open-position: absolute;
+$menu-open-z-index: 2;
+$menu-open-bg-color: rgba(0, 0, 0, .5);
+$container-padding: 0;
+$container-width-tablet: 740px;
+$container-width-laptop: 960px;
+$container-width-desktop: 1140px;
+$nav-padding: 30px;
+$nav-link-font-weight: 500;
+$nav-link-color: #2c3e50;
+$nav-link-active-color: #42b983;
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background: $brand-white;
+	color: lighten($brand-black, 50%);
+	font-family: $font-primary;
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 1.8;
+	margin: $body-margin;
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	&.menu-is-open {
+		height: 100%;
+		overflow: hidden;
+		position: fixed;
+		width: 100%;
+	}
+}
+
+* {
+	box-sizing: border-box;
+}
+
+a {
+	color: $brand-primary;
+	@include transition(0.5s);
+
+	&:hover {
+		color: $brand-lighter;
+	}
+
+	&:focus,
+	&:active {
+		outline: none;
+	}
+}
+
+::-webkit-selection {
+	background: $brand-selection-color;
+	color: $brand-body-color;
+}
+
+::-moz-selection {
+	background: $brand-selection-color;
+	color: $brand-body-color;
+}
+
+::selection {
+	background: $brand-selection-color;
+	color: $brand-body-color;
+}
+
+
+.App {
+  & .menu-is-open {
+    background: $menu-open-bg-color;
+    display: $menu-open-display;
+    height: 100%;
+    left: 0;
+    overflow: $menu-open-overflow;
+    position: $menu-open-position;
+    top: 0;
+    width: 100%;
+    z-index: $menu-open-z-index;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  padding: $container-padding;
+
+  @include tablet {
+    width: $container-width-tablet;
+  }
+
+  @include laptop {
+    width: $container-width-laptop;
+  }
+
+  @include desktop {
+    width: $container-width-desktop;
+  }
+}
+
+.container--full {
+	width: 100vw;
+
+	& .header {
+		background: none;
+	}
+}
+
+#nav {
+  padding: $nav-padding;
+
+  a {
+    font-weight: $nav-link-font-weight;
+    color: $nav-link-color;
+
+    &.router-link-exact-active {
+      color: $nav-link-active-color;
+    }
+  }
+}
+
+.is-hidden {
+	display: none !important;
+}
+
+.is-visible {
+	display: block !important;
+}

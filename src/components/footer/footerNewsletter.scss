@@ -1,0 +1,62 @@
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
+
+$footer-newsletter-margin: 180px auto 80px;
+$footer-newsletter-title-font-size: 2rem;
+$footer-newsletter-text-font-size: 1.2rem;
+$footer-newsletter-group-margin: 0 auto;
+$footer-newsletter-group-width: 300px;
+$footer-newsletter-input-height: 50px;
+$footer-newsletter-input-font-size: 14px;
+$footer-newsletter-button-padding: 10px 20px;
+$footer-newsletter-button-height: 50px;
+
+.footer-newsletter {
+	margin: $footer-newsletter-margin;
+	text-align: center;
+
+	@include mobile {
+		margin-top: 0;
+	}
+}
+
+.footer-newsletter__title {
+	font-family: $font-secondary;
+	font-size: $footer-newsletter-title-font-size;
+}
+
+.footer-newsletter__text {
+	font-family: $font-secondary;
+	font-size: $footer-newsletter-text-font-size;
+}
+
+.footer-newsletter__group {
+	margin: $footer-newsletter-group-margin;
+	width: $footer-newsletter-group-width;
+}
+
+.footer-newsletter__input {
+	border: none;
+	color: $brand-gray;
+	display: inline-block;
+	height: $footer-newsletter-input-height;
+	font-size: $footer-newsletter-input-font-size;
+	padding: 10px;
+	text-align: center;
+	vertical-align: middle;
+	width: 100%;
+
+	&:focus {
+		outline: 0;
+	}
+}
+
+.footer-newsletter__button {
+	background: $brand-black;
+	color: $brand-white;
+	border: none;
+	padding: $footer-newsletter-button-padding;
+	text-transform: uppercase;
+	height: $footer-newsletter-button-height;
+	width: 100%;
+}

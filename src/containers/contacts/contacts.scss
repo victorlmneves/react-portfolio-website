@@ -1,0 +1,15 @@
+@import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
+
+.contacts {
+  clear: both;
+  display: flex;
+  height: 85vh;
+  justify-content: space-between;
+  padding: 10em 0 0;
+  position: relative;
+
+  @include mobile {
+    flex-direction: column;
+  }
+}
