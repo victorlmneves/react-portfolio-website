@@ -46,7 +46,7 @@ const work = () => {
       .then((res) => res.json())
       .then(
         (result) => {
-          const workItem = result.records[0]
+          const workItem = result
           const allImages = workItem.images.split(',')
           workItem.images = allImages
 

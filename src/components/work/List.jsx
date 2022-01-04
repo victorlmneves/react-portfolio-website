@@ -18,7 +18,7 @@ const List = () => {
       .then((res) => res.json())
       .then(
         (result) => {
-          setWorkList(result.records)
+          setWorkList(result)
           setIsLoaded(true)
         },
 
